@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %} рега {% endblock %}
+
+{% block content %}
+
+<div class="container">
+<form method="POST">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button class="btn btn-warning" type="submit">Сохранить</button>
+    <a class="btn btn-secondary" href="{% url 'homepage' %}">назад</a>
+</form>
+</div>
+{% endblock %}
