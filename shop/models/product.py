@@ -8,6 +8,10 @@ class Product(models.Model):
     descripton = models.CharField(max_length=255, default='', blank=True, null=True)
     image = models.ImageField(upload_to = 'upload/product')
 
+    def __str__(self):
+        return self.name
+
+
     @staticmethod
     def get_products_by_id(ids):
         return Product.objects.filter(id__in=ids)

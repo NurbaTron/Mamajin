@@ -7,6 +7,9 @@ from .views.signin import signin
 from .views.signout import signout
 from .views.cart import addToCard, remove_from_cart
 from .views.categoory import pr_by_category
+from .views.search import search
+from .views.order import order
+
 
 urlpatterns = [
     path('', homepage, name='homepage'),
@@ -19,4 +22,6 @@ urlpatterns = [
     path('addToCart/<int:pk>', addToCard, name='addToCart'),
     path('remove_from_cart/<int:pk>', remove_from_cart, name='remove_from_cart'),
     path('category/<int:pk>', pr_by_category, name='pr_by_category'),
+    path('search', search, name='search'),
+    path('order', order, name='order'),
 ]
